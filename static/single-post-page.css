@@ -1,0 +1,91 @@
+/*  Header Background */
+#header {
+	color: white;
+	background-color: #212121;
+	width: 100%;
+	height: 350px;
+	margin-bottom: -280px;
+}
+
+
+/* POST */
+
+#flex-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.post-content-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 40px;
+	width: 90%;
+	max-width: 720px;
+}
+
+.post-information {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 10px;
+	margin-top: 80px;
+}
+
+.post-information h1 {
+	font-size: 30px;
+	color: white;
+	font-weight: 700;
+}
+.post-information span {
+	font-size: 16px;
+	color: #4285F4;
+	font-weight: 600;
+}
+
+article {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 20px;
+}
+
+.post-content {
+	width: 100%;
+	color: rgba(33, 33, 33, 0.95);
+	font-size: 17px;
+	font-family: Roboto Mono;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 0.5px;
+}
+
+p, ol, ul, h2, h3 {
+	margin-bottom: 10px;
+}
+
+ol, ul {
+	margin-top: -8px;
+}
+
+
+
+/* 540 - 760: Hero section starts to break --> image moves below background and text is too big, nav items too close, logo too big*/
+@media screen and (max-width: 760px){
+
+	.post-information {
+		margin-top: 40px;
+	}
+
+	.post-information h1 {
+		font-size: 24px;
+	}
+
+	#Hero {
+		height: 400px;
+		margin-bottom: -280px;
+	}
+
+}

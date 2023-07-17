@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ pagename }} | TuringBytes</title>
+	<script src="https://kit.fontawesome.com/1648d319bf.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css') }}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;600;700&display=swap" rel="stylesheet">
+	{% block page_css %} {% endblock %}
+</head> 
+<body>
+	<nav> 
+		<div id="navbar">
+			<div id="navbar-flex-wrapper">
+				<a href="/"> <img id='nav-logo' class='main-logo' src="{{ url_for('static', filename='TuringBytes.svg')}}"> </a>
+	
+				<ul id="nav-items">
+					<li class="nav-item"><a href="/"> Home </a> </li> 
+					<li class="nav-item"><a href="/categories"> Categories </a> </li> 
+					<li class="nav-item"><a href="/about"> About </a> </li> 
+					<li class="nav-item"><a href="/contact"> Contact </a> </li> 
+				</ul>	
+
+				<i class="fa-solid fa-bars fa-2xl " id="hamburger" style="color: #ffffff; "></i>
+				<i class="fa-solid fa-xmark fa-2xl" id="ham-cross" style="color: #ffffff;"></i>
+			</div>			
+		</div>
+		<div id="dropdown-container">
+			<ul id="nav-items-dropdown">
+				<li class="nav-item"><a href="/"> Home </a> </li> 
+				<li class="nav-item"><a href="/categories"> Categories </a> </li> 
+				<li class="nav-item"><a href="/about"> About </a> </li> 
+				<li class="nav-item"><a href="/contact"> Contact </a> </li>  
+			</ul>
+		</div>
+	</nav>
+
+	{% block main_content %} {% endblock %}
+
+	<div id="content-loading">
+		{% block content_loading %} {% endblock %}		
+	</div>
+
+	<footer>
+		<div>TuringBytes 2023</div>
+	</footer>
+	
+
+		<script type="text/javascript">
+		let NavOpen = false
+		let mobileMenuBars = document.querySelector('#hamburger')
+		let mobileMenuCross = document.querySelector('#ham-cross')
+		let navItems = document.querySelector('#nav-items-dropdown')
+		let dropDownContainer = document.querySelector('#dropdown-container')
+
+
+		mobileMenuBars.addEventListener('click', (event) =>{
+			if (NavOpen === false) {
+				mobileMenuBars.style.display = 'none'
+				mobileMenuCross.style.display = 'block'
+
+				// navItems.style.display = 'flex'
+				dropDownContainer.style.display = 'flex'
+
+				NavOpen = true
+			}			
+		})
+
+		mobileMenuCross.addEventListener('click', (event) =>{
+			if (NavOpen===true){
+				mobileMenuBars.style.display = 'block'
+				mobileMenuCross.style.display = 'none'
+
+				// navItems.style.display = 'none'
+				dropDownContainer.style.display = 'none'
+
+				NavOpen = false
+			}
+		})
+
+		window.addEventListener('resize', () => {
+			if (window.innerWidth >= 760) {
+				mobileMenuBars.style.display = 'none'
+				mobileMenuCross.style.display = 'none'
+				dropDownContainer.style.display = 'none'
+
+			}else {
+				if (NavOpen === true){
+					mobileMenuCross.style.display = 'block'
+					dropDownContainer.style.display = 'flex'
+
+				}else {
+					mobileMenuBars.style.display = 'block'
+				}
+				
+			}
+
+		})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+* {
+	margin: 0px;
+	padding: 0px;
+
+}
+
+body {
+	width: 100%;
+}
+
+html {
+	display: inline;
+}
+
+
+
+/* NAV */
+
+.main-logo {
+	width: 282px;
+	height: 40px;
+}
+
+#hamburger {
+	display: none;
+}
+
+#ham-cross {
+	display: none;
+}
+
+#top-nav a {
+}
+
+#navbar {
+	height: 80px;
+	width: 100%;
+	position: fixed;
+	background-color: #212121;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	z-index: 1000;
+}
+
+#navbar-flex-wrapper {
+	width: 80%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#nav-items {
+	padding: 0px;
+	margin: 0px;
+	width: 35%;
+
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	list-style: none;
+
+}
+
+#dropdown-container {
+	position: fixed;
+	padding: 0px;
+	margin: 0px;
+
+	background-color: #212121;
+	margin-top: 80px;
+	height: 200px;
+	width: 100%;
+	z-index: 1000;
+
+	display: none;
+}
+
+#nav-items-dropdown {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 5%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	list-style: none;
+
+}
+
+.nav-item a {
+	text-decoration: none;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+}
+
+.nav-item a:hover {
+	color: #4285F4;
+}
+
+/* MORE CONTENT COMING SOON */
+#content-loading {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(to right, #4285F4, #2D77F1);
+	height: 400px;
+	width: 100%;
+	text-align: center;
+}
+
+#content-loading p {
+	font-size: 50px;
+	color: white;
+	font-weight: 700;
+}
+
+/* FOOTER */
+footer {
+	color: white;
+	background-color: #212121;
+	height: 80px;
+	text-align: center;
+}
+
+footer div {
+	padding-top: 40px;
+}
+
+
+
+/* Navbar starts to break --> not aligned properly */
+@media screen and (max-width: 912px){
+	#navbar-flex-wrapper {
+		width: 90%;
+		max-width: 720px;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+/* Navbar items inside navbar start to break --> not aligned properly and getting very close together */
+@media screen and (max-width: 760px){
+	#nav-items {
+		width: 40%;
+	}
+}
+
+/* 540 - 760: Hero section starts to break --> image moves below background and text is too big, nav items too close, logo too big*/
+@media screen and (max-width: 760px){
+	.main-logo {
+		width: 80%;
+	}
+
+	#nav-items {
+		display: none;
+	}
+
+	#hamburger {
+		display: block;
+	}
+
+
+
+}

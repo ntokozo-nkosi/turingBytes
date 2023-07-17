@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+
+{% block page_css %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='single-post-page.css') }}">
+{% endblock %}
+
+
+{% block main_content %} 
+
+	<div id='header'></div>
+
+	<section id="flex-wrapper">
+		<article class="post-content-container">
+			<div class="post-information">
+				<span> {{ category | safe }} </span> 
+				<h1> {{ post_title | safe }} </h1> 
+				<span> 22 June By Ntoks</span>
+			</div>
+				
+			<img src="{{ url_for('static', filename='main-post-image.png')}}">
+
+			<div class="post-content">
+				{{ post_content | safe}}
+			</div>
+		</article>
+		
+	</section>
+	
+{% endblock %}
+
+{% block content_loading %}
+		<p>More Content and Pages Coming Soon...</p>
+{% endblock %}

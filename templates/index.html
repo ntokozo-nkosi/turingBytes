@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block page_css %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
+	
+{% block main_content %}
+
+	<header id='Hero'>
+		<div id='hero-featured-post' class="container">
+			<div id='hero-featured-post-left'>
+				<div id="hero-featured-post-left-category"> Featured posts </div>
+				<h1 id="hero-featured-post-left-heading">In-Depth Strategies for tackling recursion</h1>
+				<p id="hero-featured-post-left-subheading">Discover the magic behind the websites you visit every day! Unveil the inner workings of HTTP and gain a solid </p>
+				<button id="hero-featured-post-left-button">DIVE IN!</button>
+			</div>
+			<div id='hero-featured-post-image'>
+				<img class='Featured-post-image' src="{{ url_for('static', filename='main-post-image.png')}}">
+			</div>
+		</div>
+	</header>
+	
+	<!-- Featured Posts -->
+	<h2 class="top-level-category-heading container"> Featured Posts</h2>
+	<div class="top-level-category-posts container">
+		{% for i in range(3) %}
+		<article class="single-post-snippet">
+			<img src="{{ url_for('static', filename='Deactivating-plugins-without-WordPress-dashboard-access.png')}}">
+			<div class="single-post-category">{{data[i]['category'] | safe}}</div>
+			<h3> {{data[i]['title'][0:58] | safe}} </h3> 
+			<p> {{data[i]['snippet_description'][0:110] | safe}}...<a href="/{{ data[i]['id'] }}"> Read more</a></p> 
+		</article>
+		{% endfor %}
+	</div>
+
+	<!-- Latest Posts -->
+	<h2 class="top-level-category-heading container"> Latest Posts </h2>
+	<div class="top-level-category-posts container">
+		{% for i in range(3) %}
+		<article class="single-post-snippet">
+			<img src="{{ url_for('static', filename='Deactivating-plugins-without-WordPress-dashboard-access.png')}}">
+			<div class="single-post-category">{{data[i]['category'] | safe}}</div>
+			<h3> {{data[i]['title'][0:58] | safe}} </h3> 
+			<p> {{data[i]['snippet_description'][0:110] | safe}}...<a href="/{{ data[i]['id'] }}"> Read more</a></p> 
+		</article>
+		{% endfor %}
+		</article>
+	</div>
+
+{% endblock %}
+
+{% block content_loading %}
+		<p>More Content and Pages Coming Soon...</p>
+{% endblock %}

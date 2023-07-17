@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Admin Post View</title>
+</head>
+<body>
+	<h1> {{ post_title | safe }} </h1>
+	<p>{{ post_content | safe}}</p>
+
+	<form action="/backend/post/{{post_id}}/delete-post" method="POST" >
+		<button > DELETE POST </button>
+	</form>
+
+	<form action="/backend/post/{{post_id}}/edit-post" method="GET">
+		<button> EDIT POST </button>
+	</form>
+
+	<!-- <script type="text/javascript">
+		// function remove_post() {
+	    // 	const req = new XMLHttpRequest()
+
+	    // 	req.open("DELETE", "/backend/post/{{post_id}}/delete-post")
+
+	    // 	req.onload = () => {
+		//     	window.location.replace('/backend')
+	    // 	}
+
+	    // 	req.onerror = () => {
+	    // 		console.log("Error:")
+	    // 	}
+
+	    // 	req.send()
+	    }
+	    // function remove_post() {
+	    //     fetch('/backend/post/{{postname}}/delete-post', {
+	    //         method: 'DELETE'
+	    //     }).then(response =>{
+	    //     	if (response.ok) {
+	    //     		alert(response.ok)
+	    //     		window.location.href = "/"
+	    //     	}
+	    //     	else {
+	    //     		alert("Failed")
+	    //     	}
+
+	    // 	})
+	    // }
+	    // function remove_post() {
+	    // 	fetch('/backend/post/{{post_id}}/delete-post',{method: 'DELETE'}).then(() => {
+	    // 		window.location.href = '/backend' 
+
+	    // 	}).catch((error) => {
+	    // 		window.location.href = '/' 
+	    // 	})
+	    // }
+
+		  // async () => {
+		  //   try {
+		  //     const response = await fetch('/backend/post/{{post_id}}/delete-post', {
+		  //       method: 'DELETE'
+		  //     });
+		  //     console.log(response.ok);
+
+		  //     if (response.ok) {
+
+		  //       // Redirect to the homepage after a successful delete
+		  //       window.location.href = '/backend';
+		  //     } else {
+		  //       console.error('Failed to delete item.');
+		  //     }
+		  //   } catch (error) {
+		  //     console.error('Error:', error);
+		  //     }
+		  // };
+
+
+
+	    //     .then(response => {
+	    //         if (response.ok) {
+	    //             console.log('Item deleted successfully!');
+	    //         } else {
+	    //             console.log('Failed to delete item.');
+	    //         }
+	    //     }).then(data => {
+	    //     	console.log(data)
+	    //     })
+	    //     .catch(error => {
+	    //         console.error('Error:', error);
+	    //     });
+	    // }
+
+	</script> -->
+</body>
+</html>

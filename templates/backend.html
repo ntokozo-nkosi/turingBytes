@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TuringBytes Admin</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+	
+		}
+
+		body {
+			background-color: #F9F6EE;
+		}
+
+		h1 {
+			color: #4285F4;
+			font-size: 40px;
+		}
+
+		.container {
+			margin-left: 30%;
+			margin-right: 30%;
+		}
+
+		.header {
+			background-color: #212121;
+
+		}
+
+		.header div h1 {
+			padding-top: 8px;
+			text-transform: uppercase;
+			background-color: #212121;
+		}
+
+		.all_posts_area h2 {
+			padding-top: 20px;
+			font-size: 30px;
+		}
+
+		.post_snippet {
+			margin-top: 20px;
+			background-color: #ffffff;
+			padding: 10px;
+			border-radius: 8px;
+		}
+
+		.post_snippet .snippet_post_title {
+			margin-top: 0px;
+			font-size: 16px;
+			font-weight: 600;
+			font-family: sans-serif;
+
+		}
+
+		.post_snippet h6 {
+			margin-top: 5px;
+			color: #4285F4;
+			font-size: 14px;
+		}
+
+		.post_snippet p {
+			margin-top: 10px;
+			font-family: 'Open Sans';
+		}
+
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="container">
+			<h1>Admin</h1>
+		</div>
+	</div>
+
+	<div class="all_posts_area container">
+		<h2>All Posts</h2>
+		<a href="/backend/create-post">Create</a>
+		{% for post in data %}
+			<div class="post_snippet">
+				<p class="snippet_post_title">{{ post['title'] | safe }}</p>
+				<h6> {{ post['category'] | safe }} </h6>
+				<p> {{ post['snippet_description'] | safe }}</p>
+				<a href="backend/post/{{ post['id']}}">View Post</a>
+			</div>
+		{% endfor %}
+	</div>
+
+</body>
+</html>
